@@ -96,6 +96,9 @@ export default class ComposePicker extends Component {
       alert('please select correct date');
     }
   };
+  onCancel = () => {
+    this.setModalVisible(false);
+  };
   getTitleElement() {
     const { placeholder, customStyles = {}, allowFontScaling } = this.props;
     const showContent = this.state.showContent;
@@ -123,7 +126,7 @@ export default class ComposePicker extends Component {
     const { customButton } = this.props;
 
     if (customButton) {
-      return customButton(this.onConfirm);
+      return customButton(this.onConfirm, this.onCancel);
     }
     return (
       <TouchableHighlight
