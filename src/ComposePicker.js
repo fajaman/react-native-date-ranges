@@ -97,6 +97,7 @@ export default class ComposePicker extends Component {
     }
   };
   onCancel = () => {
+    this.setState({startDate: null, endDate: null });
     this.setModalVisible(false);
   };
   getTitleElement() {
